@@ -1,6 +1,6 @@
 ---
 name: Feature request
-about: For requesting changes jobs
+about: For requesting changes to jobs
 title: ''
 labels: enhancement
 assignees: ''
