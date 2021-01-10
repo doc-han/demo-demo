@@ -52,6 +52,10 @@ the UUID, and some data to upsert. Like this:
 upsert('some_table', 'some_column', state.data.records);
 ```
 
+## trigger
+
+Trigger to be used on production -example: `{form: "form-name"}`
+
 ## expression.js
 
 In pseudocode, either in the current job expression or in a new file, describe
