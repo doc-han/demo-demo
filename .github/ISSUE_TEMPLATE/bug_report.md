@@ -7,11 +7,11 @@ assignees: ''
 
 ---
 
-## Describe the bug
-A clear and concise description of what the bug is.
+## Describe the bug and expected behavior 
+A clear and concise description of what the bug is. Include any error messages from the run logs and the expected behavior. 
 
 ## To Reproduce
-1. Here is a link to a failed run on OpenFn.org wihch is indicative of the bug: __________
+1. Here is a link to a failed run on OpenFn.org which is indicative of the bug: __________
 
 ### expression.js
 Link to the job itself in Github: _____________
@@ -25,13 +25,10 @@ found.
 ```json
 {
   "configuration": ["SEE LAST PASS: 'client cred'"],
-  "data": { "a": 1 },
+  "data": {LINK TO STATE},
   "cursor": "2020-01-19 00:00:00"
 }
 ```
-
-## Expected behavior
-A clear and concise description of what you expected to happen.
 
 ## To test/resolve
 1. After the desired output is working locally (from the CLI), please [push commits to master || open a pull request].
