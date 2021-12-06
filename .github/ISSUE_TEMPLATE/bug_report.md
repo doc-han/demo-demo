@@ -14,7 +14,9 @@ A clear and concise description of what the bug is. Include any error messages f
 1. Here is a link to a failed run on OpenFn.org which is indicative of the bug: __________
 
 ### expression.js
-Link to the job itself in Github: _____________
+Link to the job itself in Github: _____________  
+Adaptor:
+
 
 ### state.json
 
