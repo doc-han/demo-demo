@@ -19,7 +19,7 @@ A clear and concise description of what you want to happen.
 Things to include as needed:
 - The number of jobs needed to be created or updated 
 - The function of each job including specific resources and operations
-- Unqiue identifiers 
+- Unique identifiers 
 - Links to mapping specifications, data flow diagrams, sample input/output data, and any API documentation
 
 
@@ -51,28 +51,13 @@ found.
 
 ## expression.js
 
-**For new jobs**, describe the number of jobs needed and the high-level function of each job.  Also include the trigger on platform and the adaptor needed for each job.   
-**For existing jobs**, provide a link to the job itself in Github and the high-level changes needed to be made.
+For new jobs, describe the number of jobs needed and the high-level function of each job. Also include the trigger on platform and the adaptor needed for each job.
+For existing jobs, provide a link to the job itself in Github and the high-level changes needed to be made. _Provide the information below for _each_ job that is required._
 
-```md
-3 jobs...
 
-Job 1
-Adaptor: Primero
-Trigger: Cron - daily at 12:00 AM
-Function: GET cases from Primero
-Output: Link to sample output
+### job name
+### adaptor
+### trigger
+### operation
+### output
 
-Job 2
-Adaptor: HTTPS
-Trigger: Flow - Job 1 
-Function: Map Primero response to DTP/Progres and upload referrals to DTP/Progres
-Output: Link to sample output
-
-Job 3
-Adaptor: Primero
-Trigger: Message filter - `{form: "form-name"}`
-Function: Upsert Primero with decision status
-Output: Link to sample output
-
-```
