@@ -32,6 +32,11 @@ Create jobs 1 &2 in which OpenFn gets cases from Primero and gets the case and s
 3. Upload referrals to DTP/Progres: POST https://antirrio.azure-api.net/primero-uat/ReceiveIncomingReferral
 ```
 
+### Expected data volumes
+How many records do we think these jobs will need to process in each run? For example: 
+```md
+When you GET data from Primero, this may return up to 1000 records. There are no known Primero API limits for # of records, but there is API paging to consider.
+```
 
 ## state.json
 
