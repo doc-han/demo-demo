@@ -105,3 +105,11 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Don't commit state.json
+state.json*
+.state.json*
+._state.json*
+**/state.json*
+**/.state.json*
+**/._state.json*
