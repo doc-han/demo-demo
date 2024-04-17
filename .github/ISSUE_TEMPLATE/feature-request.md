@@ -1,15 +1,6 @@
----
-name: Feature request
-about: For requesting changes to jobs
-title: ''
-labels: enhancement
-assignees: ''
-
----
-
 ## Background, context, and business value
 
-A clear and concise description of what the client wants and WHY.
+A clear and concise description of what the client wants and WHY. 
 
 For example: [Insert use case here]
 
@@ -17,57 +8,62 @@ For example: [Insert use case here]
 
 A clear and concise description of what you want to happen.  
 Things to include as needed:
-- The number of jobs needed to be created or updated 
-- The function of each job including specific resources and operations
+- The number of workflows needed to be created or updated 
+- The function of each workflow including specific resources and operations
 - Unique identifiers 
 - Links to mapping specifications, data flow diagrams, sample input/output data, and any API documentation
+- Links to the data model of target systems, if available
 
 
 ```md
-Create jobs 1 &2 in which OpenFn gets cases from Primero and gets the case and services, maps the Primero extract and upserts to Progres
+Create a workflow in which OpenFn will: 
+1. Get new rows from the PostgreSQL database every 1 hour
+2. Clean & transform the data according to the specified mapping rules, and then 
+3. Upsert cases in the Primero case management system via externalId `case_id`
+(Note: 1 DB row will = 1 case record.)
 
-1. Get referral data: GET /api/v2/cases -- where service_implementing_agency='UNHCR'
-   This should return: https://github.com/OpenFn/primero-progres/blob/master/sampleData/primero_sample_state.json
-2. Map Primero response to DTP/Progres interface. The field progres_primeroid will be the primary uid used by DTP.
-3. Upload referrals to DTP/Progres: POST https://antirrio.azure-api.net/primero-uat/ReceiveIncomingReferral
+See [links] below for the workflow diagrams, mapping specs, & Primero data model.
 ```
 
-### Expected data volumes
+### Data Volumes & Limits
 How many records do we think these jobs will need to process in each run? For example: 
 ```md
-When you GET data from Primero, this may return up to 1000 records. There are no known Primero API limits for # of records, but there is API paging to consider.
+When you GET data from the DB, this may return up to 1000 records. 
+There are no known Primero API limits for # of records, but there is API paging to consider.
 ```
 
-## state.json
+## Input
 
-Either provide state directly, or link to a file. If sensitive information
-should be in state, redact it and provide instructions for where it can be
-found.
+### Credentials
+Which credentials can be used to access the target system(s)? 
+(Do NOT share credential secrets on this issue -> rather point to where it can be found).
 
+### Data
+Describe how the "input" for this workflow will be generated (e.g., webhook request, timer-based query to be sent). Either provide an example directly, link to a file, or describe how a query can be executed to extract data. 
 
-```json
-{
-  "configuration": ["SEE LAST PASS: 'client cred'"],
-  "data": { LINK TO STATE },
-  "cursor": "2020-01-19 00:00:00"
-}
-```
+Be sure to redact any sensitive data and to not paste here. 
 
 
-## expression.js
+## Workflow Steps
 
-For new jobs, describe the number of jobs needed and the high-level function of each job. Also include the trigger on platform and the adaptor needed for each job.
-For existing jobs, provide a link to the job itself in Github and the high-level changes needed to be made. _Provide the information below for _each_ job that is required._
+For each new Workflow, describe the number of steps needed and the high-level function of each step. Also include the trigger on platform and the adaptor needed for each step.
+For existing steps, provide a link to the step itself in Github and the high-level changes needed to be made. _Provide the information below for _each_ step that is required._
 
 
-### job name
-### adaptor
-### trigger
-### operation
-### output
+### 1. Step Name  (e.g., `1. Get new DB rows`)
 
-## Toggl 
+####  adaptor
+E.g., `postgresql`
 
-Name of the Toggle project to log work
+#### operation
+E.g., Query (`SELECT * from table where created_at >= NOW()`)
+
+#### output
+List of new DB rows
+
+## How to test 
+Link to test suite and/or provide examples of input/output scenarios to validate the implementation. 
+
+## Toggl
 
 
