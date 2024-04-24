@@ -1,3 +1,11 @@
+---
+name: Feature request
+about: For new workflows & change requests
+title: ''
+labels: feature request
+assignees: ''
+
+---
 ## Background, context, and business value
 
 A clear and concise description of what the client wants and WHY. 
