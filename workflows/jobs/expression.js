@@ -1,4 +1,1 @@
-// language-http
-
-get('someUrl', { ...params }, callback);
-post('someUrl', { body: state => state.data })'
+get('https://jsonplaceholder.typicode.com/todos/1');
